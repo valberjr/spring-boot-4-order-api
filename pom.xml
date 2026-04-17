@@ -29,6 +29,7 @@
 	<properties>
 		<java.version>25</java.version>
 		<datasource-micrometer.version>2.2.1</datasource-micrometer.version>
+		<sonar.organization>valberjr</sonar.organization>
 	</properties>
 	<dependencies>
 		<dependency>
