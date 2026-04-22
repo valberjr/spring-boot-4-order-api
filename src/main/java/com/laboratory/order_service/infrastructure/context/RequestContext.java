@@ -1,4 +1,4 @@
-package com.laboratory.order_service.context;
+package com.laboratory.order_service.infrastructure.context;
 
 public final class RequestContext {
 

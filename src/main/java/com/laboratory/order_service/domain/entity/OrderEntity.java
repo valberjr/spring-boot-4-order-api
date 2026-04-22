@@ -1,4 +1,4 @@
-package com.laboratory.order_service.entity;
+package com.laboratory.order_service.domain.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -34,16 +34,22 @@ public class OrderEntity {
     @LastModifiedDate
     private Instant updatedAt;
 
-    public OrderEntity() {
+    protected OrderEntity() {
     }
 
-    public OrderEntity(BigDecimal amount, Status status) {
-        this.amount = amount;
-        this.status = status;
+    public static OrderEntity create(BigDecimal amount) {
+        OrderEntity order = new OrderEntity();
+        order.amount = amount;
+        order.status = Status.PENDING;
+        return order;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public BigDecimal getAmount() {
@@ -56,10 +62,6 @@ public class OrderEntity {
 
     public Status getStatus() {
         return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
     }
 
     public Instant getCreatedAt() {
@@ -78,7 +80,16 @@ public class OrderEntity {
         this.updatedAt = updatedAt;
     }
 
+    public void markAsProcessed() {
+        if (this.status != Status.PENDING) {
+            throw new IllegalStateException("Only PENDING orders can be processed.");
+        }
+        this.status = Status.PROCESSED;
+    }
+
     public enum Status {
+        FAILED,
+        PENDING,
         PROCESSED
     }
 }

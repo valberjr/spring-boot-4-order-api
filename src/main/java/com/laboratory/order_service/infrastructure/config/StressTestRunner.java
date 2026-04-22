@@ -1,4 +1,4 @@
-import com.laboratory.order_service.AppConstants;
+import com.laboratory.order_service.infrastructure.config.AppConstants;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;

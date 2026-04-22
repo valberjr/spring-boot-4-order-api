@@ -1,4 +1,4 @@
-package com.laboratory.order_service;
+package com.laboratory.order_service.infrastructure.config;
 
 public final class AppConstants {
     private AppConstants() {

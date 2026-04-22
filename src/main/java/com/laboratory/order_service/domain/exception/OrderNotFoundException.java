@@ -1,4 +1,4 @@
-package com.laboratory.order_service.exception;
+package com.laboratory.order_service.domain.exception;
 
 public class OrderNotFoundException extends RuntimeException {
     public OrderNotFoundException(String id) {

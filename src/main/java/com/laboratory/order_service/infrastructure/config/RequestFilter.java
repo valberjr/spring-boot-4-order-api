@@ -1,7 +1,6 @@
-package com.laboratory.order_service.config;
+package com.laboratory.order_service.infrastructure.config;
 
-import com.laboratory.order_service.AppConstants;
-import com.laboratory.order_service.context.RequestContext;
+import com.laboratory.order_service.infrastructure.context.RequestContext;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
