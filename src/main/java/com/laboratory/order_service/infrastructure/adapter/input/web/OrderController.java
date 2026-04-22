@@ -7,7 +7,6 @@ import com.laboratory.order_service.infrastructure.adapter.input.dto.OrderReques
 import com.laboratory.order_service.infrastructure.adapter.input.dto.OrderResponse;
 import com.laboratory.order_service.infrastructure.adapter.input.mapper.OrderMapper;
 import jakarta.validation.Valid;
-import org.jspecify.annotations.NullMarked;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/orders")
-@NullMarked
 @Valid
 public class OrderController {
     private final ListOrdersUseCase listOrdersUseCase;
