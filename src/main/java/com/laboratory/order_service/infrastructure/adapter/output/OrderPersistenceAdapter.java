@@ -3,6 +3,8 @@ package com.laboratory.order_service.infrastructure.adapter.output;
 import com.laboratory.order_service.domain.entity.OrderEntity;
 import com.laboratory.order_service.domain.repository.OrderRepository;
 import com.laboratory.order_service.infrastructure.adapter.output.persistence.OrderJpaRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,5 +19,10 @@ public class OrderPersistenceAdapter implements OrderRepository {
     @Override
     public OrderEntity save(OrderEntity order) {
         return repository.save(order);
+    }
+
+    @Override
+    public Page<OrderEntity> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 }
